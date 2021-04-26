@@ -34,7 +34,7 @@ jobs:
           # Path to solution(s) to be analyzed. Specify multiple times to analyze many solutions. Supports ANT-style wildcards.
           solution: .\BankExample\BankExample.sln
           # An URL of test configuration to be used for analysis
-          testConfig: builtin://Recommended Rules
+          testConfig: user://AllRules
           # Fails the command with exit code 2 if any findings are reported.
           fail: false
 
