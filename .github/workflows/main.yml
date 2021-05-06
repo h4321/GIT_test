@@ -37,7 +37,7 @@ jobs:
           testConfig: user://AllRules
           # Fails the command with exit code 2 if any findings are reported.
           fail: false
-          sarifMode: 'legacy'
+          sarifMode: 'builtin'
 
       # ---------------------------------------------------------------
       # Archive the findings reports as job artifact
