@@ -1,6 +1,0 @@
-C:\dotTEST_github\GIT_test\BankExample\Parasoft.Dottest.Examples.Bank\bin\Debug\Parasoft.Dottest.Examples.Bank.dll
-C:\dotTEST_github\GIT_test\BankExample\Parasoft.Dottest.Examples.Bank\bin\Debug\Parasoft.Dottest.Examples.Bank.pdb
-C:\dotTEST_github\GIT_test\BankExample\Parasoft.Dottest.Examples.Bank\obj\Debug\Parasoft.Dottest.Examples.Bank.csprojAssemblyReference.cache
-C:\dotTEST_github\GIT_test\BankExample\Parasoft.Dottest.Examples.Bank\obj\Debug\Parasoft.Dottest.Examples.Bank.csproj.CoreCompileInputs.cache
-C:\dotTEST_github\GIT_test\BankExample\Parasoft.Dottest.Examples.Bank\obj\Debug\Parasoft.Dottest.Examples.Bank.dll
-C:\dotTEST_github\GIT_test\BankExample\Parasoft.Dottest.Examples.Bank\obj\Debug\Parasoft.Dottest.Examples.Bank.pdb
