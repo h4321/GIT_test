@@ -137,4 +137,13 @@ namespace Parasoft.Dottest.Examples.Bank
 
         public CurrencyExchangeConverter Coverter { get { return _converter; } set { _converter = value; } }
     }
+    
+    public class IRB
+    {
+        private int _value;
+        public int IsOK()   // VIOLATION
+        {
+            return _value;
+        }
+    }
 }
