@@ -32,7 +32,7 @@ jobs:
         with:
           installDir: 'c:\Program Files\Parasoft\dotTEST\2021.2'
           # Path to solution(s) to be analyzed. Specify multiple times to analyze many solutions. Supports ANT-style wildcards.
-          solution: .\BankExample\BankExample.sln
+          project: C:\actions-runner\_work\GIT_test\GIT_test\BankExample\Parasoft.Dottest.Examples.Bank\Parasoft.Dottest.Examples.Bank.csproj
           # An URL of test configuration to be used for analysis
           testConfig: user://AllRules
           # Fails the command with exit code 2 if any findings are reported.
