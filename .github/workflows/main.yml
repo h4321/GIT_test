@@ -32,7 +32,7 @@ jobs:
         with:
           installDir: 'c:\Program Files\Parasoft\dotTEST\2021.2'
           # Path to solution(s) to be analyzed. Specify multiple times to analyze many solutions. Supports ANT-style wildcards.
-          solution: .\BankExample\BankExample.sln
+          project: C:\actions-runner\_work\GIT_test\GIT_test\BankExample\Parasoft.Dottest.Examples.Bank\Parasoft.Dottest.Examples.Bank.csproj
           showsettings: true
           property: license.network.host=licserv.parasoft.com.pl; console.verbosity.level=high
           # An URL of test configuration to be used for analysis
