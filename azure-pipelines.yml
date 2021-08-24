@@ -1,19 +1,67 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# .NET Desktop
+# Build and run tests for .NET Desktop or Windows classic desktop solutions.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/windows/dot-net
 
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
+pool: default
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: NuGetToolInstaller@1
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: VSBuild@1
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: VSTest@2
+  inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+# dotTEST: Full checkout required to have full SCM data on a report
+- checkout: self
+  persistCredentials: true
+- task: CmdLine@2
+  displayName: Checkout $(Build.SourceBranchName)
+  inputs:
+    script: |
+            git checkout $(Build.SourceBranchName)
+            git pull
+
+# dotTEST: tool installed & configured on a self-hosted agent
+- task: dotTEST@0
+  inputs:
+    workingDir: '$(Pipeline.Workspace)'
+    installDir: 'c:\Program Files\Parasoft\dotTEST\2021.2'
+    solution: '.\**\*.sln'
+    # depending on decision it will be removed
+    sarif: false
+    nobuild: true
+    solutionConfig: 'Debug'
+    targetPlatform: 'Any CPU'
+  name: dottest
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(dottest.report)'
+    ArtifactName: 'report.xml'
+    publishLocation: 'Container'
+  
+- task: PublishParasoftResults@1
+  inputs:
+    # issue with default parameterization
+    resultsFiles: $(dottest.report)
+    failOnFailures: true
