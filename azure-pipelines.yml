@@ -9,7 +9,7 @@ trigger:
 pool: default
 
 variables:
-  solution: '**/*.sln'
+  solution: '**/BankExample.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
@@ -46,7 +46,7 @@ steps:
   inputs:
     workingDir: '$(Pipeline.Workspace)'
     installDir: 'c:\Program Files\Parasoft\dotTEST\2021.2'
-    solution: '.\**\*.sln'
+    solution: '.\**\BankExample.sln'
     # depending on decision it will be removed
     sarif: false
     nobuild: true
