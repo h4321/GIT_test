@@ -30,7 +30,7 @@ jobs:
         # uses: tobyash86/run-dottest-analyzer-proto@1bc4be095189f455793afdb10b47127e06ae25ff
         uses: parasoft/run-dottest-action@1.2.3
         with:
-          installDir: 'c:\Program Files\Parasoft\dotTEST\2022.1'
+          installDir: 'c:\Program Files\Parasoft\dotTEST\2022.2'
           # Path to solution(s) to be analyzed. Specify multiple times to analyze many solutions. Supports ANT-style wildcards.
           website: C:\actions-runner\_work\GIT_test\GIT_test\BankExample.WebSite\Parasoft.Dottest.Examples.Bank.WebSite
           showsettings: true
