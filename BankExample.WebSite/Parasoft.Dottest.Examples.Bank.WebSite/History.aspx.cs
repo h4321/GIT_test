@@ -9,7 +9,7 @@ public partial class History : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-       Bank bank = BankProvider.Instance.GetBank(this.Application, true, true);
+        Bank bank = BankProvider.Instance.GetBank(this.Application, true, true);
        BankUser user = bank.GetUserByLogin(Page.User.Identity.Name);
 
         string accountNumber = Request["account"];
