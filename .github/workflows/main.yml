@@ -37,7 +37,9 @@ jobs:
           showsettings: true
           property: license.network.host=licserv.parasoft.com.pl; console.verbosity.level=high
           # An URL of test configuration to be used for analysis
-          testConfig: 'Run VSTest Tests with Coverage'
+          testConfig: 'Run VSTest Tests with Coverage' 
+          referenceReportFile: c:\actions-runner\_work\GIT_test\GIT_test\.dottest\report\142\report.xml 
+          referenceCoverageFile: c:\actions-runner\_work\GIT_test\GIT_test\.dottest\report\142\coverage.xml
           # Fails the command with exit code 2 if any findings are reported.
           fail: false
           sarifMode: 'builtin'
