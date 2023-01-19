@@ -37,7 +37,7 @@ jobs:
           showsettings: true
           property: license.network.host=licserv.parasoft.com.pl; console.verbosity.level=high
           # An URL of test configuration to be used for analysis
-          testConfig: 'builtin://Recommended Rules'
+          testConfig: 'Run VSTest Tests'
           # Fails the command with exit code 2 if any findings are reported.
           fail: false
           sarifMode: 'builtin'
