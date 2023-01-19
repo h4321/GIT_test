@@ -40,7 +40,7 @@ jobs:
           testConfig: 'Run VSTest Tests with Coverage' 
           reportDir: report
           referenceReportFile: c:\actions-runner\_work\report_TIA\report.xml 
-		      referenceCoverageFile: c:\actions-runner\_work\report_TIA\coverage.xml
+          referenceCoverageFile: c:\actions-runner\_work\report_TIA\coverage.xml
           # Fails the command with exit code 2 if any findings are reported.
           fail: false
           sarifMode: 'builtin'
