@@ -39,8 +39,6 @@ jobs:
           # An URL of test configuration to be used for analysis
           testConfig: 'Run VSTest Tests with Coverage' 
           reportDir: report
-          referenceReportFile: c:\actions-runner\_work\GIT_test\GIT_test\report_TIA\report.xml 
-          referenceCoverageFile: c:\actions-runner\_work\GIT_test\GIT_test\report_TIA\coverage.xml
           # Fails the command with exit code 2 if any findings are reported.
           fail: false
           sarifMode: 'builtin'
