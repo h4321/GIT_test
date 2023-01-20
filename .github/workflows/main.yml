@@ -25,6 +25,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Run Parasoft dotTEST
         id: dottest
         # You may pin to the exact commit or the version.
@@ -35,7 +37,7 @@ jobs:
           # Path to solution(s) to be analyzed. Specify multiple times to analyze many solutions. Supports ANT-style wildcards.
           solution: .\BankExample\BankExample.sln
           showsettings: true
-          property: license.network.host=licserv.parasoft.com.pl; console.verbosity.level=high
+          property: scope.scontrol.files.filter.mode=branch; scope.scontrol.ref.branch=origin/main; scope.scontrol=true;scontrol.rep1.type=git; scontrol.rep1.git.url=${{ github.server_url }}/${{ github.repository }}; scontrol.rep1.git.workspace=${{ github.workspace }}; scontrol.git.exec=C:\Program Files\Git\bin\git.exe'
           # An URL of test configuration to be used for analysis
           testConfig: 'user://All rules' 
           reportDir: report
@@ -44,7 +46,7 @@ jobs:
           sarifMode: 'builtin'
 
       # ---------------------------------------------------------------
-      # Archive the findings reports as job artifact
+      # Archive the findings reports as job artifact;
       - name: Upload report artifacts
         uses: actions/upload-artifact@v3
         with:
