@@ -6,6 +6,7 @@ namespace Parasoft.Dottest.Examples.Bank
 {
     public class AccountNumber
     {
+        int a123456789123456789123456789 = 123;
         private byte[] _digits;
 
         public AccountNumber(byte[] digits)
