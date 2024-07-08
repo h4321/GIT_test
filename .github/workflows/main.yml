@@ -35,12 +35,11 @@ jobs:
         with:
           installDir: 'c:\Program Files\Parasoft\dotTEST\2024.2'
           # Path to solution(s) to be analyzed. Specify multiple times to analyze many solutions. Supports ANT-style wildcards.
-          solution: .\BankExample\BankExample.sln
+          solution: 'C:\dotTEST\Examples_2024.2.0.1586\NET Framework\VS2022\SourceCode\BankExample\BankExample.sln'
           showsettings: true
           property: scope.scontrol.files.filter.mode=branch; scope.scontrol.ref.branch=origin/main; scope.scontrol=true;scontrol.rep1.type=git; scontrol.rep1.git.url=${{ github.server_url }}/${{ github.repository }}; scontrol.rep1.git.workspace=${{ github.workspace }}; scontrol.git.exec=C:\Program Files\Git\bin\git.exe
           # An URL of test configuration to be used for analysis
-          testConfig: 'builtin://Demo' 
-          vs: '2022'
+          testConfig: 'builtin://Demo'
           reportDir: report
           # Fails the command with exit code 2 if any findings are reported.
           fail: false
