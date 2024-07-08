@@ -37,7 +37,7 @@ jobs:
           # Path to solution(s) to be analyzed. Specify multiple times to analyze many solutions. Supports ANT-style wildcards.
           solution: .\BankExample\BankExample.sln
           showsettings: true
-          property: scope.scontrol.files.filter.mode=branch; scope.scontrol.ref.branch=origin/main; scope.scontrol=true;scontrol.rep1.type=git; scontrol.rep1.git.url=${{ github.server_url }}/${{ github.repository }}; scontrol.rep1.git.workspace=${{ github.workspace }}; scontrol.git.exec=C:\Program Files\Git\bin\git.exe
+          property: dottest.build.builder_id=msbuild; scope.scontrol.files.filter.mode=branch; scope.scontrol.ref.branch=origin/main; scope.scontrol=true;scontrol.rep1.type=git; scontrol.rep1.git.url=${{ github.server_url }}/${{ github.repository }}; scontrol.rep1.git.workspace=${{ github.workspace }}; scontrol.git.exec=C:\Program Files\Git\bin\git.exe
           # An URL of test configuration to be used for analysis
           testConfig: 'builtin://Demo' 
           reportDir: report
