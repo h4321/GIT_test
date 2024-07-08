@@ -39,7 +39,7 @@ jobs:
           showsettings: true
           property: scope.scontrol.files.filter.mode=branch; scope.scontrol.ref.branch=origin/main; scope.scontrol=true;scontrol.rep1.type=git; scontrol.rep1.git.url=${{ github.server_url }}/${{ github.repository }}; scontrol.rep1.git.workspace=${{ github.workspace }}; scontrol.git.exec=C:\Program Files\Git\bin\git.exe
           # An URL of test configuration to be used for analysis
-          testConfig: 'user://All rules' 
+          testConfig: 'builtin://Demo' 
           reportDir: report
           # Fails the command with exit code 2 if any findings are reported.
           fail: false
