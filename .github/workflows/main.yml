@@ -31,9 +31,9 @@ jobs:
         id: dottest
         # You may pin to the exact commit or the version.
         # uses: tobyash86/run-dottest-analyzer-proto@1bc4be095189f455793afdb10b47127e06ae25ff
-        uses: parasoft/run-dottest-action@2.0.0
+        uses: parasoft/run-dottest-action@2.0.1
         with:
-          installDir: 'c:\Program Files\Parasoft\dotTEST\2023.1'
+          installDir: 'c:\Program Files\Parasoft\dotTEST\2024.2'
           # Path to solution(s) to be analyzed. Specify multiple times to analyze many solutions. Supports ANT-style wildcards.
           solution: .\BankExample\BankExample.sln
           showsettings: true
